@@ -1,0 +1,41 @@
+{
+  "name": "amigo",
+  "version": "1.0.0",
+  "description": "This an backend for an app to help to cab sharing without getting tied down to one cab service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/black-marbles/amiGo.git"
+  },
+  "keywords": [
+    "journey",
+    "location",
+    "user",
+    "organization",
+    "bus",
+    "vehicle",
+    "models",
+    "map"
+  ],
+  "author": "black-marbles-tech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/black-marbles/amiGo/issues"
+  },
+  "homepage": "https://github.com/black-marbles/amiGo#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
