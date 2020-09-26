@@ -19,21 +19,27 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     required: [true, "is required"],
     match: [/^[a-zA-Z0-9]+$/, "is invalid"],
+    unique: true,
+  },
+  name: {
+    type: String,
+    match: [/^[a-zA-Z0-9]+$/, "is invalid"],
+    required: [true, "is required"],
   },
   gender: {
     type: String,
     lowercase: true,
-    required: [true, 'is required']
+    required: [true, "is required"],
   },
   dob: {
     type: Date,
-    required: true
+    required: true,
   },
   category: {
     type: String,
     required: true,
-    enum: ['student', 'teacher', 'parent']
-  }
+    enum: ["student", "teacher", "parent"],
+  },
 }, {
   timestamps: true,
 });
@@ -50,15 +56,15 @@ userSchema.methods.generateAuthToken = async function() {
 };
 
 userSchema.methods.toJSON = function() {
-  const user = this
+  const user = this;
   const userObj = user.toObject();
-  delete userObj.password
-  return userObj
-}
+  delete userObj.password;
+  return userObj;
+};
 
 userSchema.statics.findByCredentials = async function(email, passowrd) {
   const user = await User.findOne({
-    email
+    email,
   });
   if (!user) {
     throw new Error("Unable to login");
